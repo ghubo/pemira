@@ -45,7 +45,8 @@ const Timeline: React.FC = () => (
                     ? "bg-yellow-400"
                     : "bg-blue-600"
                 } ${
-                  new Date(event.date) < new Date() && (new Date(array[idx + 1]?.date) >= new Date() || !array[idx + 1].date)
+                  new Date(event.date) < new Date() &&
+(!array[idx + 1] || new Date(array[idx + 1].date) >= new Date())
                     ? "animate-ping"
                     : "hidden"
                 }`}
